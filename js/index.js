@@ -54,7 +54,7 @@ function resetForm() {
 
 function copyText() {
   const text = $passwordCurrent.textContent;
-  if (!navigator.clipboard || text.length === 0) return;
+  if (!navigator.clipboard || text.length === 0 || text === "-") return;
   navigator.clipboard
     .writeText(text)
     .then(showAlert)
